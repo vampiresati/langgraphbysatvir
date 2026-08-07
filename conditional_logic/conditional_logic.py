@@ -14,8 +14,8 @@ def urgent_response(request: SupportRequest):
     return request
 def conditional_response(request: SupportRequest):
     if request['priority']== 1 or 'urgent' in  request['message']:
-        return urgent_response(request)
-    return standard_response(request)
+        return "urgent"
+    return "standard"
 
 graph = StateGraph(SupportRequest)
 graph.add_node("standard",standard_response)
