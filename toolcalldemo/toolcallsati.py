@@ -33,8 +33,12 @@ def get_restaurant_recommendations(location: str):
         location.lower(),
         ["No recommendations available for this location."]
     )
+@tool
+def book_table(restaurant: str,time:str):
+    """Book a table for a given restaurant at a given time."""
+    return f"Table booked for {restaurant} and time {time}."
 
-tools = [get_restaurant_recommendations]
+tools = [get_restaurant_recommendations,book_table]
 
 llm = ChatOllama(
     model="qwen3:4b",
@@ -77,7 +81,7 @@ result = runnable.invoke(
           "messages": [
               {
                   "role": "user",
-                  "content": "Recommend some restaurants in Sirhind.",
+                  "content": "can you just one top Recommend restaurant in Sirhind and book my table.",
               }
           ]
       }
