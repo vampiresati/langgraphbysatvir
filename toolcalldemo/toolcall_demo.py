@@ -1,6 +1,5 @@
 # from langchain_openai import ChatOpenAI
 from langchain_ollama import ChatOllama
-
 from langchain_core.messages import HumanMessage
 from langchain_core.tools import tool
 
@@ -12,7 +11,10 @@ def get_restaurant_recommendations(location: str):
         "munich": ["Hofbräuhaus", "Augustiner-Keller", "Tantris"],
         "new york": ["Le Bernardin", "Eleven Madison Park", "Joe's Pizza"],
         "paris": ["Le Meurice", "L'Ambroisie", "Bistrot Paul Bert"],
+        "sirhind":["aam khas bhag","sidhu restaurant","rana heritage"],
+        "gobindgarh":["soya hut","khas bhavan"],
     }
+    print(location)
     return recommendations.get(location.lower(), ["No recommendations available for this location."])
 
 
@@ -26,10 +28,10 @@ llm_with_tools = llm.bind_tools(tools)
 
 
 messages = [
-    HumanMessage("Recommend some restaurants in Munich.")
+    HumanMessage("Recommend some restaurants in Sirhind.")
 ]
 
-#TODO: Invoke the llm
+
 llm_output = llm_with_tools.invoke(messages)
 print(llm_output)
 
