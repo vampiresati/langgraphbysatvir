@@ -254,7 +254,7 @@ current_affairs_graph = create_current_affairs_workflow()
 if __name__ == "__main__":
 
     inputs = {
-        "question": "What are the top global headlines today?"
+        "question": "What is cancer battle news?"
     }
 
     response = current_affairs_graph.invoke(inputs)
