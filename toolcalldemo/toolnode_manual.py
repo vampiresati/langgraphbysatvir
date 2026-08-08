@@ -49,10 +49,10 @@ builder.add_node("chatbot", chatbot)
 builder.add_node("tools", ToolNode(tools))
 
 builder.add_edge(START, "chatbot")
+builder.add_edge("tools", "chatbot")
 
 builder.add_conditional_edges("chatbot",tools_condition,{"tools": "tools",END: END,},)
 
-builder.add_edge("tools", "chatbot")
 
 graph = builder.compile()
 display(graph)
