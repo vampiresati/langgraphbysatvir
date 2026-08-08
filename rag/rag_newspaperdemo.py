@@ -10,6 +10,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 from langgraph.graph import StateGraph, START, END
 
+from util.langgraph_util import display
 
 # ---------------------------------------------------
 # Current Affairs News Sources
@@ -237,7 +238,6 @@ def create_current_affairs_workflow():
         "generate_current_affairs_summary",
         END,
     )
-
     return workflow.compile()
 
 
@@ -257,7 +257,7 @@ if __name__ == "__main__":
     inputs = {
         "question": "What about Jharkhand protests?"
     }
-
+    display(current_affairs_graph)
     response = current_affairs_graph.invoke(inputs)
 
     print("\n--------------------------------")
