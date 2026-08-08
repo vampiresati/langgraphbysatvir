@@ -16,11 +16,12 @@ from langgraph.graph import StateGraph, START, END
 # ---------------------------------------------------
 
 news_urls = [
-    "https://www.bbc.com/news",
-    "https://www.cnn.com/world",
-    "https://www.nytimes.com/section/world",
-    "https://www.reuters.com/world/",
-    "https://www.aljazeera.com/news/",
+    # "https://www.bbc.com/news",
+    # "https://www.cnn.com/world",
+    # "https://www.nytimes.com/section/world",
+    # "https://www.reuters.com/world/",
+    # "https://www.aljazeera.com/news/",
+    "https://www.thehindu.com/"
 ]
 
 
@@ -254,7 +255,7 @@ current_affairs_graph = create_current_affairs_workflow()
 if __name__ == "__main__":
 
     inputs = {
-        "question": "What is cancer battle news?"
+        "question": "What about Jharkhand protests?"
     }
 
     response = current_affairs_graph.invoke(inputs)
