@@ -13,10 +13,10 @@ def speak_text(text, language="pa", filename="output.mp3"):
     print(f"Audio saved as {filename}")
     return filename
 if __name__ == "__main__":
-    punjabi_text = "ਸਤ ਸ੍ਰੀ ਅਕਾਲ, ਅੱਜ ਅਸੀਂ ਆਰਟੀਫੀਸ਼ਲ ਇੰਟੈਲੀਜੈਂਸ ਬਾਰੇ ਗੱਲ ਕਰਾਂਗੇ।"
+    punjabi_text = "aja appa punjabi wich gal kriye"
     fname=speak_text(
         punjabi_text,
-        language="pa",
+        language="hi",
         filename="punjabi.mp3"
     )
     import subprocess
