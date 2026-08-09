@@ -34,3 +34,13 @@ if __name__=="__main__":
     english=hindi_to_english(t)
     punjabi = english_to_punjabi(english)
     print(punjabi)
+    from test_to_speak import speak_text
+    fname = speak_text(
+        english,
+        language="en",
+        filename="punjabi.mp3"
+    )
+    import subprocess
+    subprocess.run(["xdg-open", fname])
+
+
