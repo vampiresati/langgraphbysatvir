@@ -30,5 +30,7 @@ def get_transcript(url):
 if __name__=="__main__":
     t=get_transcript("https://www.youtube.com/shorts/xcimtu5jcWo")
     print(t)
-    from translating_language import translate_hindi_to_english
-    print(translate_hindi_to_english(t))
+    from translating_language import hindi_to_english,english_to_punjabi
+    english=hindi_to_english(t)
+    punjabi = english_to_punjabi(english)
+    print(punjabi)
