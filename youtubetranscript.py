@@ -23,12 +23,12 @@ def get_transcript(url):
     video_id = get_video_id(url)
 
     api = YouTubeTranscriptApi()
-    languages = ["en", "hi"]
+    languages = ["en", "hi","pa"]
     transcript = api.fetch(video_id,languages)
 
     return " ".join(item.text for item in transcript)
 if __name__=="__main__":
-    t=get_transcript("https://www.youtube.com/shorts/xcimtu5jcWo")
+    t=get_transcript("https://www.youtube.com/watch?v=JAmxk43rHjA&list=RDJAmxk43rHjA&start_radio=1")
     print(t)
     from translating_language import hindi_to_english,english_to_punjabi
     english=hindi_to_english(t)
@@ -36,8 +36,8 @@ if __name__=="__main__":
     print(punjabi)
     from test_to_speak import speak_text
     fname = speak_text(
-        english,
-        language="en",
+        t,
+        language="pa",
         filename="punjabi.mp3"
     )
     import subprocess
